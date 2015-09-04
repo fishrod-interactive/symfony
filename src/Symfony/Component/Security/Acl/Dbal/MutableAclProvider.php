@@ -977,8 +977,7 @@ QUERY;
             }
         }
 
-        for ($i = 0, $c = count($old); $i < $c; ++$i) {
-            $ace = $old[$i];
+        foreach ($old as $ace) {
 
             if (!isset($currentIds[$ace->getId()])) {
                 $this->connection->executeQuery($this->getDeleteAccessControlEntrySql($ace->getId()));
